@@ -1,0 +1,20 @@
+# action.yml
+name: 'ECS deploy'
+description: 'Github action using fabfuel/ecs-deploy script'
+inputs:
+    cluster-name:
+        description: 'Cluster name where service/task will be deployed'
+        required: true
+    service-name:
+        description: 'Service name of the service/task to be deployed'
+        required: true
+    task-name:
+        description: 'Task definition name to be updated'
+        required: true
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.cluster-name }}
+    - ${{ inputs.service-name }}
+    - ${{ inputs.task-name }}
