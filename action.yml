@@ -1,6 +1,6 @@
 # action.yml
 name: 'ECS deploy'
-description: 'Github action using fabfuel/ecs-deploy script'
+description: 'Github action using fabfuel/ecs-deploy script for ecs deployments'
 inputs:
     cluster-name:
         description: 'Cluster name where service/task will be deployed'
