@@ -4,4 +4,4 @@ LABEL author="Bruno Cascio <@brunocascio>"
 
 COPY entrypoint.sh /entrypoint.sh
 
-ENTRYPOINT [ "entrypoint.sh" ]
+ENTRYPOINT [ "/entrypoint.sh" ]
