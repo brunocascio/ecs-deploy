@@ -5,9 +5,10 @@ This action deploys ECS services using [fabfuel/ecs-deploy](https://github.com/f
 ## Example usage
 
 ```yml
-uses: brunocascio/ecs-deploy@v0.1.0
+uses: brunocascio/ecs-deploy@v0.1.2
 with:
   cluster-name: theCluster
   service-name: theService
   task-name: theTaskDefinitionName
+  container-name: theContainer
 ```

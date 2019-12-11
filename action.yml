@@ -11,6 +11,9 @@ inputs:
     task-name:
         description: 'Task definition name to be updated'
         required: true
+    container-name:
+        description: 'Container name to be updated'
+        required: true
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -18,3 +21,4 @@ runs:
     - ${{ inputs.cluster-name }}
     - ${{ inputs.service-name }}
     - ${{ inputs.task-name }}
+    - ${{ inputs.container-name }}
