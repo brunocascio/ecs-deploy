@@ -2,6 +2,6 @@
 
 set -e o pipefail
 
-env_variables=$(printenv | awk -v NAME=$CONTAINER_NAME '{print "-e " NAME " " $1 " "}' | xargs)
+env_variables=$(jq -n 'env' | jq --arg CONTAINER "$CONTAINER_NAME" -r 'keys[] as $k | "-e \($CONTAINER) \($k) \"\(values[$k])\""')
 
-ecs deploy $CLUSTER_NAME $SERVICE_NAME --task $TASK_NAME -e $env_variables --exclusive-env
+eval "ecs deploy $CLUSTER_NAME $SERVICE_NAME --task $TASK_NAME $env_variables --exclusive-env"
