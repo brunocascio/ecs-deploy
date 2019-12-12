@@ -6,4 +6,6 @@ env_variables=$(jq -n 'env' | jq --arg CONTAINER "$CONTAINER_NAME" -r 'keys[] as
 
 command=$(printf "ecs deploy --task $TASK_NAME --exclusive-env $env_variables $CLUSTER_NAME $SERVICE_NAME")
 
+echo $command
+
 eval $command
