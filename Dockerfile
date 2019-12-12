@@ -2,8 +2,10 @@ FROM fabfuel/ecs-deploy:1.10.0
 
 LABEL author="Bruno Cascio <@brunocascio>"
 
+WORKDIR /
+
 RUN apk add jq
 
-COPY entrypoint.sh /entrypoint.sh
+COPY . .
 
 ENTRYPOINT [ "/entrypoint.sh" ]
