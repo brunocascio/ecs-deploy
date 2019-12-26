@@ -11,9 +11,5 @@ with:
   service: theServiceName
   task: theTaskDefinitionName
   container: theContainerName
-  envfile: /path/to/your/envfile (optionally, see notes below!)
+  envfile: /path/to/your/envfile (optionally)
 ```
-
-**NOTE**
-
-If you don't pass an envfile, this action will pass env variables from system (`env` command) by default.

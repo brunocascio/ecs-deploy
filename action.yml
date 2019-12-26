@@ -15,7 +15,7 @@ inputs:
         description: 'Container name to be updated'
         required: true
     envfile:
-        description: 'Env file path (optionally)'
+        description: 'Env file path'
         required: false
 runs:
   using: 'docker'
