@@ -14,6 +14,9 @@ inputs:
     container:
         description: 'Container name to be updated'
         required: true
+    envfile:
+        description: 'Env file path (optionally)'
+        required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -22,3 +25,4 @@ runs:
     - ${{ inputs.service }}
     - ${{ inputs.task }}
     - ${{ inputs.container }}
+    - ${{ inputs.envfile }}
