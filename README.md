@@ -5,11 +5,12 @@ This action deploys ECS services using [fabfuel/ecs-deploy](https://github.com/f
 ## Example usage
 
 ```yml
-uses: brunocascio/ecs-deploy@v1>
+uses: brunocascio/ecs-deploy@v1.1.0
 with:
   cluster: theClusterName
   service: theServiceName
   task: theTaskDefinitionName
   container: theContainerName
   envfile: /path/to/your/envfile (optionally)
+  timeout: 720 (optionally, default 300)
 ```

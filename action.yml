@@ -17,6 +17,9 @@ inputs:
     envfile:
         description: 'Env file path'
         required: false
+    timeout:
+        description: 'Deployment timeout (default 300)'
+        required: false
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -26,3 +29,4 @@ runs:
     - ${{ inputs.task }}
     - ${{ inputs.container }}
     - ${{ inputs.envfile }}
+    - ${{ inputs.timeout }}
