@@ -11,6 +11,7 @@ with:
   service: theServiceName
   task: theTaskDefinitionName
   container: theContainerName
+  region: awsRegion
   envfile: /path/to/your/envfile (optionally)
   timeout: 720 (optionally, default 300)
 ```
