@@ -7,5 +7,5 @@ WORKDIR /
 RUN apk add jq
 
 COPY . .
-
+RUN chmod a+x ./entrypoint.sh
 ENTRYPOINT [ "/entrypoint.sh" ]
