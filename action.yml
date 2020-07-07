@@ -14,12 +14,15 @@ inputs:
     container:
         description: 'Container name to be updated'
         required: true
+    region:
+        description: 'Region to deploy in'
+        required: true
     envfile:
         description: 'Env file path'
         required: false
     timeout:
         description: 'Deployment timeout (default 300)'
-        required: false
+        required: false      
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -28,5 +31,6 @@ runs:
     - ${{ inputs.service }}
     - ${{ inputs.task }}
     - ${{ inputs.container }}
+    - ${{ inputs.region }}
     - ${{ inputs.envfile }}
     - ${{ inputs.timeout }}
