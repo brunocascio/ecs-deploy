@@ -1,5 +1,5 @@
 # action.yml
-name: 'ECS deploy'
+name: 'ECS deploy with Region'
 description: 'Github action using fabfuel/ecs-deploy script for ecs deployments'
 inputs:
     cluster:
