@@ -9,11 +9,11 @@ uses: brunocascio/ecs-deploy@v1.1.1
 with:
   access_key: awsAccessKey
   secret_key: awsSecretKey
+  region: awsRegion
   cluster: theClusterName
   service: theServiceName
   task: theTaskDefinitionName
   container: theContainerName
-  region: awsRegion
   envfile: /path/to/your/envfile (optionally)
   timeout: 720 (optionally, default 300)
 ```
