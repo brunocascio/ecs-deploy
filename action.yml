@@ -27,10 +27,12 @@ runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
+    - ${{ inputs.access_key }}
+    - ${{ inputs.secret_key }}
+    - ${{ inputs.region }}
     - ${{ inputs.cluster }}
     - ${{ inputs.service }}
     - ${{ inputs.task }}
     - ${{ inputs.container }}
-    - ${{ inputs.region }}
     - ${{ inputs.envfile }}
     - ${{ inputs.timeout }}
