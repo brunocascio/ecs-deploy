@@ -5,7 +5,7 @@ This action deploys ECS services using [fabfuel/ecs-deploy](https://github.com/f
 ## Example usage
 
 ```yml
-uses: brunocascio/ecs-deploy@v1.1.1
+uses: brunocascio/ecs-deploy@v1.2.0
 with:
   access_key: awsAccessKey
   secret_key: awsSecretKey
