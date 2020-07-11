@@ -7,6 +7,8 @@ This action deploys ECS services using [fabfuel/ecs-deploy](https://github.com/f
 ```yml
 uses: brunocascio/ecs-deploy@v1.1.1
 with:
+  access_key: awsAccessKey
+  secret_key: awsSecretKey
   cluster: theClusterName
   service: theServiceName
   task: theTaskDefinitionName
