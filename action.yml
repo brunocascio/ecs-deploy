@@ -2,31 +2,14 @@
 name: 'ECS deploy'
 description: 'Github action using fabfuel/ecs-deploy script for ecs deployments'
 inputs:
-    cluster:
-        description: 'Cluster name where service/task will be deployed'
+    args: 
+        description: 'Args to pass into ecs script'
         required: true
-    service:
-        description: 'Service name of the service/task to be deployed'
-        required: true
-    task:
-        description: 'Task definition name to be updated'
-        required: true
-    container:
-        description: 'Container name to be updated'
-        required: true
-    envfile:
-        description: 'Env file path'
-        required: false
-    timeout:
-        description: 'Deployment timeout (default 300)'
-        required: false
+outputs:
+    result:
+        description: 'Output provided by ecs deploy tool'
 runs:
   using: 'docker'
   image: 'Dockerfile'
   args:
-    - ${{ inputs.cluster }}
-    - ${{ inputs.service }}
-    - ${{ inputs.task }}
-    - ${{ inputs.container }}
-    - ${{ inputs.envfile }}
-    - ${{ inputs.timeout }}
+    - ${{ inputs.args }}

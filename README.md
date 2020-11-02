@@ -1,6 +1,6 @@
 # ECS deploy using Github Actions
 
-This action deploys ECS services using [fabfuel/ecs-deploy](https://github.com/fabfuel/ecs-deploy) script.
+This action deploys ECS services using [fabfuel/ecs-deploy](https://github.com/fabfuel/ecs-deploy) tool.
 
 ## Example usage
 
@@ -13,13 +13,20 @@ This action deploys ECS services using [fabfuel/ecs-deploy](https://github.com/f
     aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
     aws-region: ${{ secrets.AWS_REGION }} 
 
-- name: Deploy to ecs
-  uses: brunocascio/ecs-deploy@v1.1.2
+- name: Deploying services with an env file
+  uses: brunocascio/ecs-deploy@v2
   with:
-    cluster: theClusterName
-    service: theServiceName
-    task: theTaskDefinitionName
-    container: theContainerName
-    envfile: /path/to/your/envfile (optionally)
-    timeout: 720 (optionally, default 300)
+    args: deploy <cluster> <service> --task <task-definition>
+
+- name: Running tasks
+  uses: brunocascio/ecs-deploy@v2
+  with:
+    args: run <cluster> <task-definition> -c <container> "your shell command here"
+
+- name: Running crons
+  uses: brunocascio/ecs-deploy@v2
+  with:
+    args: cron <cluster> <task> <rule>
 ```
+
+Check the [fabfuel/ecs-deploy](https://github.com/fabfuel/ecs-deploy) for more information about what you can do with it.
