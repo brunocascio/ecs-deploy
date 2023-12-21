@@ -1,4 +1,4 @@
-FROM fabfuel/ecs-deploy:1.11.0
+FROM fabfuel/ecs-deploy:1.14.0
 
 LABEL author="Bruno Cascio <@brunocascio>"
 
