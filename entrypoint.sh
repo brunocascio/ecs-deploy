@@ -1,5 +1,8 @@
 #!/bin/sh -le
 
 result=$(ecs $INPUT_ARGS)
+ret_code=$?
 
-echo "::set-output name=result::$result"
+echo result=$result >> $GITHUB_OUTPUT
+
+return $ret_code
