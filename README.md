@@ -14,17 +14,17 @@ This action deploys ECS services using [fabfuel/ecs-deploy](https://github.com/f
     aws-region: ${{ secrets.AWS_REGION }} 
 
 - name: Deploying services with an env file
-  uses: brunocascio/ecs-deploy@v2.1.0
+  uses: brunocascio/ecs-deploy@v2.2.0
   with:
     args: deploy <cluster> <service> --task <task-definition>
 
 - name: Running tasks
-  uses: brunocascio/ecs-deploy@v2.1.0
+  uses: brunocascio/ecs-deploy@v2.2.0
   with:
     args: run <cluster> <task-name> -c <container> "your override shell command here"
 
 - name: Updating a cron (scheduled task)
-  uses: brunocascio/ecs-deploy@v2.1.0
+  uses: brunocascio/ecs-deploy@v2.2.0
   with:
     args: cron <cluster> <task> <rule>
 ```
